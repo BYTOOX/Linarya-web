@@ -160,6 +160,29 @@ a {
   min-height: 84vh;
   display: flex;
   align-items: center;
+  position: relative;
+  background-image: url('https://i.imgur.com/xL8OGws.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg);
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+[data-theme='light'] .hero::before {
+  opacity: 0.5;
 }
 
 .hero-grid {
@@ -177,10 +200,23 @@ a {
   margin-bottom: 1rem;
 }
 
+
 .hero .lede {
   font-size: 1.1rem;
   color: var(--text-muted);
   max-width: 540px;
+  background-color: rgba(16, 18, 26, 0.7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+[data-theme='light'] .hero .lede {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
+  color: var(--text);
+  font-weight: 500;
 }
 
 .eyebrow {
@@ -189,6 +225,11 @@ a {
   font-size: 0.75rem;
   color: var(--accent);
   margin-bottom: 0.9rem;
+}
+
+[data-theme='light'] .hero .eyebrow {
+  color: var(--text);
+  font-weight: 600;
 }
 
 .hero-cta {
@@ -237,11 +278,17 @@ a {
 }
 
 .hero-media .media-card {
-  background: radial-gradient(circle at top left, rgba(122, 90, 248, 0.25), rgba(5, 6, 10, 0.9));
+  background-color: rgba(16, 18, 26, 0.7);
   border-radius: var(--radius);
   padding: 1.5rem;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme='light'] .hero-media .media-card {
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(15px);
 }
 
 .hero-media img {
