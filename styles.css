@@ -281,8 +281,8 @@ a {
   background-color: rgba(16, 18, 26, 0.7);
   border-radius: var(--radius);
   padding: 1.5rem;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(122, 90, 248, 0.3);
+  box-shadow: var(--shadow), 0 0 30px rgba(122, 90, 248, 0.25);
   backdrop-filter: blur(10px);
 }
 
@@ -360,6 +360,13 @@ a {
   flex-direction: column;
   gap: 0.6rem;
   box-shadow: var(--shadow);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.lexique-card:hover {
+  border-color: rgba(122, 90, 248, 0.4);
+  box-shadow: var(--shadow), 0 0 25px rgba(122, 90, 248, 0.3);
+  transform: translateY(-2px);
 }
 
 .lexique-card h3 {
